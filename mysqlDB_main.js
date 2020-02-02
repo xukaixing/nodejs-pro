@@ -1,9 +1,9 @@
 var mysql  = require('mysql');  
  
 var connection = mysql.createConnection({     
-  host     : '10.211.55.5',       
+  host     : '10.211.55.12',       
   user     : 'root',              
-  password : 'root',       
+  password : '123456',       
   port: '3306',                   
   database: 'sciframe4' 
 }); 
