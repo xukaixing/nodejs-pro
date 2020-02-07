@@ -7,8 +7,7 @@ target
 .project
 .settings
 .metadata
-.idea
-.vscode
+
 # project release file
 *.war
 
@@ -45,3 +44,23 @@ $RECYCLE.BIN/
 dic
 rebel.xml
 .rebel.xml.bak
+node_modules/
+/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+selenium-debug.log
+.history/
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+package.json.rej
+*.json
+package-lock.json
+yarn.lock
+

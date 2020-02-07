@@ -1,11 +1,14 @@
 var events = require('events');
 var eventEmitter = new events.EventEmitter();
-
 /**
  * eventEmitter注册2个一样的事件名，并没有覆盖，每个都执行了一遍
  * begin
  */
 eventEmitter.on('someEvent', function(arg1, arg2) { 
+    var a = 1;
+    var b = '1';
+    if(a === b)
+      console.log('==和===');
     console.log('listener1', arg1, arg2); 
 }); 
 eventEmitter.on('someEvent', function(arg1, arg2) {
