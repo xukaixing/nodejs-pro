@@ -4,5 +4,6 @@
   "singleQuote": true,
   "semi": true,
   "jsxSingleQuote": false,
+  "arrowParens": "avoid",
   "eslintIntegration": true
 }

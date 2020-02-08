@@ -8,23 +8,35 @@
 *         error 或 2：表示验证规则，不满足时报错
 */
 module.exports = {
-  root: true,
-  parser: 'babel-eslint',
+  root: true, // 此项是用来告诉eslint找当前配置文件不能往父级查找
+  parser: 'babel-eslint', // 兼容es6插件
   parserOptions: {
-    sourceType: 'module',
+    sourceType: 'module', // 设置为 "script" (默认) 或 "module"（如果代码是 ECMAScript 模块)
     'allowImportExportEverywhere': true,
-    ecmaFeatures: {
-      jsx: true
+    ecmaFeatures: { // 使用额外的语言特性
+      jsx: true, // 启用JSX
+      modules: true// 允许使用模块，模块内默认严格模式
     }
   },
+  // 指定脚本的运行环境。每种环境都有一组特定的预定义全局变量
   env: {
     browser: true,
     es6: true,
-    node: true
+    node: true,
+    jquery: true,
+    commonjs: true
   },
   // extends: 'eslint:recommended',
-  extends: ['plugin:vue/recommended', 'prettier', 'prettier/vue'],
-  plugins: ['vue', 'prettier'],
+  // 此项是用来配置标准的js风格，就是说写代码的时候要规范的写
+  extends: [
+    // 按从上往下的规则匹配
+    'eslint:recommended',
+    'plugin:vue/recommended',
+    'prettier', 'prettier/vue'
+  ],
+  // required to lint *.vue files
+  // 此项是用来提供插件的，插件名称省略了eslint-plugin-，下面这个配置是用来规范html的
+  plugins: ['vue', 'prettier', 'html'],
   // plugins: [
   //   'eslint-plugin-html', // 检查html当中script标签
   //   'eslint-plugin-import',
