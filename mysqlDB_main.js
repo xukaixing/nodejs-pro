@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
 connection.connect();
 
 var sql = "SELECT * FROM TM_USER WHERE ACCOUNT='SUPERMAN'";
-//查
+// 查询mysql数据库
 connection.query(sql, function(err, result) {
   if (err) {
     console.log('[SELECT ERROR] - ', err.message);
