@@ -9,21 +9,25 @@
 module.exports = {
   root: true, // 此项是用来告诉eslint找当前配置文件不能往父级查找
   parserOptions: {
+    ecmaVersion: 6, // ES的版本，默认为5
     parser: 'babel-eslint', // 兼容es6插件
     sourceType: 'module', // 设置为 "script" (默认) 或 "module"（如果代码是 ECMAScript 模块)
     allowImportExportEverywhere: true,
     ecmaFeatures: {
-      // 使用额外的语言特性
+      // 使用额外的语言特性，指定要使用其他那些语言对象
       jsx: true, // 启用JSX
-      modules: true // 允许使用模块，模块内默认严格模式
+      modules: true, // 允许使用模块，模块内默认严格模式
+      impliedStrict: true, // 启用严格校验模式
+      experimentalObjectRestSpread: true // 启用对对象的扩展
     }
   },
-  // 指定脚本的运行环境。每种环境都有一组特定的预定义全局变量
+  // 指定脚本的运行环境。每种环境都有一组特定的预定义全局变量,默认情况下，所有环境变量都为fals,且这些环境并不冲突，可以自由选择搭配
   env: {
-    browser: true,
-    node: true,
-    es6: true,
-    commonjs: true
+    browser: true, // 启用浏览器全局变量
+    node: true, // Node.js全局变量和Node.js范围。
+    es6: true, // 启用ES6的功能。
+    commonjs: true, // CommonJS全局变量和CommonJS范围。
+    jquery: true // jQuery全局变量
   },
   // extends: 'eslint:recommended',
   // 此项是用来配置标准的js风格，就是说写代码的时候要规范的写
@@ -36,8 +40,8 @@ module.exports = {
   ],
   // required to lint *.vue files
   // 此项是用来提供插件的，插件名称省略了eslint-plugin-，下面这个配置是用来规范html的
-  plugins: ['vue', 'prettier'],
-  // plugins: ['typescript', 'import', 'node', 'standard', 'promise', 'commonjs', 'vue', 'prettier', 'html'],
+  // plugins: ['vue', 'prettier'],
+  plugins: ['typescript', 'import', 'node', 'standard', 'promise', 'commonjs', 'vue', 'prettier', 'html'],
   // plugins: [
   //   'eslint-plugin-html', // 检查html当中script标签
   //   'eslint-plugin-import',
