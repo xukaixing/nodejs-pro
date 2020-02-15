@@ -25,8 +25,8 @@ module.exports = {
   env: {
     browser: true, // 启用浏览器全局变量
     node: true, // Node.js全局变量和Node.js范围。
-    es6: true, // 启用ES6的功能。
     commonjs: true, // CommonJS全局变量和CommonJS范围。
+    es6: true, // 启用ES6的功能。
     jquery: true // jQuery全局变量
   },
   // extends: 'eslint:recommended',
