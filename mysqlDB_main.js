@@ -9,7 +9,6 @@ var connection = mysql.createConnection({
 });
 
 connection.connect();
-
 var sql = "SELECT * FROM TM_USER WHERE ACCOUNT='SUPERMAN'";
 // 查询mysql数据库
 connection.query(sql, function(err, result) {
