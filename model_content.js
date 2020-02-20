@@ -18,4 +18,5 @@ exports.world = function() {
 var w = function() {
   console.log('Hello World2 exports');
 };
+// exports相当于module.exports,exports = module.exports = {},exports 是 module.exports 的一个引用;
 exports.world2 = w;
